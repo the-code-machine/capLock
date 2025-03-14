@@ -1,30 +1,30 @@
 import { NextResponse } from "next/server";
+import connectDB from "@/mongodb";
+import Order from "@/models/order";
 
 export async function POST(req) {
     try {
+        await connectDB();
+
         const formData = await req.json();
-        const url = `https://script.google.com/macros/s/AKfycbwrLS4zIOym4AgQ3NIxHdhd9411XxiAFN60y6qQA4b9YagywDjQ0DiiTw6Fo7JLpIgiTA/exec`
-        const response = await fetch(
-            url,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            }
-        );
 
-        const data = await response.json();
+        // Generate a unique order ID (e.g., ORD-12345)
+        const orderId = "ORD-" + Math.floor(10000 + Math.random() * 90000);
 
-        if (data.success) {
-            return NextResponse.json({ success: true, orderId: data.orderId }, { status: 200 });
-        } else {
-            return NextResponse.json({ success: false, error: "Failed to process order" }, { status: 500 });
-        }
+        const newOrder = new Order({
+            orderId,
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            pincode: formData.pincode,
+            address: formData.address,
+        });
 
+        await newOrder.save();
+
+        return NextResponse.json({ success: true, orderId }, { status: 200 });
     } catch (error) {
-        console.error("Error processing order:", error);
+        console.error("Order API Error:", error);
         return NextResponse.json({ success: false, error: error.toString() }, { status: 500 });
     }
 }

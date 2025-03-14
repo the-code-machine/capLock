@@ -1,11 +1,55 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+import toast from "react-hot-toast";
 
 const ContactPage = () => {
+    // State for form data
+    const [contactFormData, setContactFormData] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
+
+    // Handle input change
+    const handleChange = (e) => {
+        setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
+    };
+
+    // Handle form submission
+    const handleContactSubmit = async (e) => {
+        e.preventDefault();
+        toast.loading("Submitting your message...");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(contactFormData)
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                toast.dismiss();
+                toast.success("Message sent successfully! 🎉");
+                setContactFormData({ name: "", email: "", message: "" }); // Reset form
+            } else {
+                toast.dismiss();
+                toast.error("Message submission failed. Please try again.");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            toast.dismiss();
+            toast.error("Something went wrong. Please try again later.");
+        }
+    };
+
     return (
         <section>
             {/* Hero Section */}
@@ -33,7 +77,7 @@ const ContactPage = () => {
                 </p>
             </div>
 
-            {/* Contact Form Section (White Background) */}
+            {/* Contact Form Section */}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -45,25 +89,38 @@ const ContactPage = () => {
                     Fill out the form below and our team will get back to you shortly.
                 </p>
 
-                <form className="mt-8 max-w-2xl mx-auto">
+                <form onSubmit={handleContactSubmit} className="mt-8 max-w-2xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <input
                             type="text"
+                            name="name"
+                            value={contactFormData.name}
+                            onChange={handleChange}
                             placeholder="Your Name"
                             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                            required
                         />
                         <input
                             type="email"
+                            name="email"
+                            value={contactFormData.email}
+                            onChange={handleChange}
                             placeholder="Your Email"
                             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+                            required
                         />
                     </div>
                     <textarea
+                        name="message"
+                        value={contactFormData.message}
+                        onChange={handleChange}
                         placeholder="Your Message"
                         className="w-full mt-6 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
                         rows="5"
+                        required
                     ></textarea>
                     <motion.button
+                        type="submit"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="mt-6 px-8 py-3 bg-black text-white font-medium rounded-md transition-all shadow-md w-full"
@@ -73,9 +130,9 @@ const ContactPage = () => {
                 </form>
             </motion.div>
 
-            {/* Contact Details Section (Black Background) */}
+            {/* Contact Details Section */}
             <motion.div
-                className="container mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center  text-white"
+                className="container mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white"
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -85,7 +142,7 @@ const ContactPage = () => {
             >
                 {/* Phone */}
                 <motion.div
-                    className="p-8 rounded-lg shadow-md border  bg-black flex flex-col items-center"
+                    className="p-8 rounded-lg shadow-md border bg-black flex flex-col items-center"
                     variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
                 >
                     <FiPhone className="text-5xl text-gray-300 mb-4" />
@@ -110,7 +167,7 @@ const ContactPage = () => {
                 >
                     <FiMapPin className="text-5xl text-gray-300 mb-4" />
                     <h3 className="text-xl font-semibold text-white">Address</h3>
-                    <p className="text-gray-400 mt-2">464240 , Vidisha Madhya Pradesh</p>
+                    <p className="text-gray-400 mt-2">464240, Vidisha, Madhya Pradesh</p>
                 </motion.div>
             </motion.div>
         </section>

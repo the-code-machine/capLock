@@ -83,7 +83,7 @@ const PolicyPage = () => {
                             <h2 className="text-3xl font-bold">Return Policy</h2>
                         </div>
                         <p className="text-gray-300 text-lg mt-4">
-                            If you're not satisfied with your purchase, you can **return your item within 7 days**.
+                            If you&apos;re not satisfied with your purchase, you can **return your item within 7 days**.
                         </p>
                         <ul className="mt-6 space-y-4 text-gray-300">
                             <li className="flex items-center space-x-2">

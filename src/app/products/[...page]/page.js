@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FiCheckCircle, FiXCircle, FiTruck } from "react-icons/fi";
 import { products } from "@/data";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
 const ProductDetails = () => {
     const pathname = usePathname();
@@ -67,6 +68,7 @@ const ProductDetails = () => {
             toast.error("Something went wrong. Please try again later.");
         }
     };
+
 
 
 
@@ -134,11 +136,11 @@ const ProductDetails = () => {
 
                 {/* Checkout Form */}
                 {viewMode === "checkout" && !orderId && (
-                    <div className="mt-16 bg-gray-100 p-8 rounded-lg shadow-md flex flex-col justify-center items-center">
+                    <div className="mt-16 bg-gray-100 md:p-8 p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
                         <h2 className="text-3xl font-bold text-center">Checkout</h2>
                         <p className="text-gray-600 text-center mt-2">Fill in your details to complete the purchase.</p>
 
-                        <form className="mt-6 max-w-2xl mx-auto">
+                        <form className="mt-6 md:max-w-2xl w-full md:mx-auto">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <input
                                     type="text"
@@ -210,12 +212,20 @@ const ProductDetails = () => {
 
                         <div className="flex flex-col items-center mt-6">
                             <Image
-                                src="/whatsapp-qr.png" // Add your QR image in public folder
+                                src="/qrcode_182825360_a1c699e381a54f2b1b2cd6515ea47baa.png" // Add your QR image in public folder
                                 alt="WhatsApp QR Code"
                                 width={200}
                                 height={200}
                             />
-                            <p className="text-lg font-medium mt-4">WhatsApp: +91 9752133459</p>
+                            <Link
+                                href="https://wa.me/919752133459?text=Hello%20I%20am%20interested%20in%20your%20products!"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="px-6 py-3 bg-green-500 mt-5 text-white font-medium rounded-md s hover:bg-green-600"
+                            >
+                                Chat on WhatsApp
+                            </Link>
+
                         </div>
                     </div>
                 )}

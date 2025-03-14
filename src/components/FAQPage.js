@@ -103,7 +103,7 @@ const FaqPage = () => {
             >
                 <h2 className="text-4xl font-bold">Still Have Questions?</h2>
                 <p className="text-gray-300 mt-3 max-w-2xl mx-auto">
-                    If your question isn't answered here, feel free to contact us.
+                    If your question isn&apos;t answered here, feel free to contact us.
                 </p>
                 <motion.a
                     href="/contact"

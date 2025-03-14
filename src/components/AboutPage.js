@@ -102,7 +102,7 @@ const AboutPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
             >
-                <h2 className="text-4xl font-bold">Let's Build the Future Together</h2>
+                <h2 className="text-4xl font-bold">Let&apos;s Build the Future Together</h2>
                 <p className="text-gray-300 mt-3 max-w-2xl mx-auto">
                     Whether you need a **custom prototype, an IoT solution, or an advanced robotics project**, we’re here to help.
                 </p>
