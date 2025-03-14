@@ -79,8 +79,8 @@ const ProductDetails = () => {
                     {/* Product Image */}
                     <div className="relative w-full h-96">
                         <Image
-                            src={product.images[0]}
-                            alt={product.title}
+                            src={product?.images[0]}
+                            alt={product?.title}
                             layout="fill"
                             objectFit="cover"
                             className="rounded-lg shadow-lg"
@@ -89,29 +89,29 @@ const ProductDetails = () => {
 
                     {/* Product Details */}
                     <div>
-                        <h1 className="text-4xl font-bold">{product.title}</h1>
-                        <p className="text-gray-700 mt-4">{product.description}</p>
+                        <h1 className="text-4xl font-bold">{product?.title}</h1>
+                        <p className="text-gray-700 mt-4">{product?.description}</p>
 
                         {/* Availability */}
                         <div className="flex items-center gap-2 mt-4 text-lg font-medium">
-                            {product.available ? (
+                            {product?.available ? (
                                 <FiCheckCircle className="text-green-600 text-xl" />
                             ) : (
                                 <FiXCircle className="text-red-500 text-xl" />
                             )}
-                            <span className={product.available ? "text-green-600" : "text-red-500"}>
-                                {product.available ? "In Stock" : "Out of Stock"}
+                            <span className={product?.available ? "text-green-600" : "text-red-500"}>
+                                {product?.available ? "In Stock" : "Out of Stock"}
                             </span>
                         </div>
 
                         {/* Delivery Time */}
                         <div className="flex items-center gap-2 text-lg text-gray-500 mt-2">
                             <FiTruck className="text-xl" />
-                            <span>Delivery: {product.delivery_time}</span>
+                            <span>Delivery: {product?.delivery_time}</span>
                         </div>
 
                         {/* Price */}
-                        <p className="text-3xl font-semibold mt-6">₹{product.price}</p>
+                        <p className="text-3xl font-semibold mt-6">₹{product?.price}</p>
 
                         {/* Toggle Buttons */}
                         <div className="flex gap-4 mt-4">
