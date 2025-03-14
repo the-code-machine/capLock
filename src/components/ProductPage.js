@@ -18,7 +18,7 @@ const ProductsPage = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
-                    <h2 className="text-4xl md:text-5xl font-extrabold">Our Projects</h2>
+                    <h2 className="text-4xl md:text-5xl font-extrabold">Our Products</h2>
                     <p className="text-lg text-gray-600 mt-3">
                         Explore our latest innovations in **3D Printing, IoT, and Prototyping**.
                     </p>
