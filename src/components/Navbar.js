@@ -14,7 +14,7 @@ import {
     FiServer,
     FiCode
 } from "react-icons/fi";
-
+import { products } from "@/data";
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [cartOpen, setCartOpen] = useState(false);
@@ -23,6 +23,24 @@ const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState("");
     const router = useRouter();
 
+    const [query, setQuery] = useState("");
+
+    // Filter products based on search query
+    const filteredProducts = products.filter(product =>
+        product.title.toLowerCase().includes(query.toLowerCase())
+    );
+
+    // Handle search input change
+    const handleSearchChange = (e) => {
+        setQuery(e.target.value);
+    };
+
+    // Redirect to selected product page
+    const handleProductClick = (productId) => {
+        setQuery(""); // Clear search
+        setSearchOpen(false); // Close search box
+        router.push(`/products/${productId}`); // Redirect to product page
+    };
     // Mock cart items count - replace with your actual cart logic
     const cartItemsCount = 0;
 
@@ -232,7 +250,7 @@ const Navbar = () => {
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="relative overflow-hidden border-t border-gray-200"
+                            className="relative overflow-hidden border-t border-gray-200 bg-white"
                         >
                             <div className="container mx-auto px-4 py-4">
                                 <div className="flex items-center bg-gray-100 rounded-lg overflow-hidden">
@@ -242,6 +260,8 @@ const Navbar = () => {
                                         placeholder="Search products..."
                                         className="w-full p-3 bg-transparent focus:outline-none"
                                         autoFocus
+                                        value={query}
+                                        onChange={handleSearchChange}
                                     />
                                     <button
                                         onClick={() => setSearchOpen(false)}
@@ -250,6 +270,26 @@ const Navbar = () => {
                                         <FiX />
                                     </button>
                                 </div>
+
+                                {/* Search Results Dropdown */}
+                                {query && (
+                                    <div className="bg-white shadow-md rounded-lg mt-2 max-h-60 overflow-auto">
+                                        {filteredProducts.length > 0 ? (
+                                            filteredProducts.map((product) => (
+                                                <div
+                                                    key={product.product_id}
+                                                    onClick={() => handleProductClick(product.product_id)}
+                                                    className="p-3 border-b border-gray-200 hover:bg-gray-100 cursor-pointer flex items-center gap-3"
+                                                >
+                                                    <img src={product.images[0]} alt={product.title} className="w-10 h-10 rounded-md object-cover" />
+                                                    <p className="text-gray-800">{product.title}</p>
+                                                </div>
+                                            ))
+                                        ) : (
+                                            <p className="p-3 text-gray-500">No products found</p>
+                                        )}
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     )}
@@ -279,7 +319,7 @@ const Navbar = () => {
                 <div className="p-5 border-b">
                     <div className="flex items-center justify-between">
                         <Link href="/" passHref>
-                            <div className="text-xl font-bold">3DTechHub</div>
+                            <div className="text-xl font-bold">CapLock</div>
                         </Link>
                         <motion.button
                             whileTap={{ scale: 0.9 }}
@@ -297,37 +337,6 @@ const Navbar = () => {
                             Products
                         </div>
                     </Link>
-
-                    {/* Mobile Services Dropdown */}
-                    <div >
-                        <button
-                            onClick={() => toggleDropdown("mobileServices")}
-                            className="flex items-center justify-between w-full px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50"
-                        >
-                            Services
-                            <FiChevronDown className={`transition-transform ${dropdownOpen === "mobileServices" ? "rotate-180" : ""}`} />
-                        </button>
-
-                        <AnimatePresence>
-                            {dropdownOpen === "mobileServices" && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
-                                    className="overflow-hidden bg-gray-50"
-                                >
-                                    {serviceItems.map((item) => (
-                                        <Link key={item.name} href={item.href} passHref>
-                                            <div className="flex items-center px-10 py-3 text-gray-600 hover:text-black">
-                                                {item.icon}
-                                                {item.name}
-                                            </div>
-                                        </Link>
-                                    ))}
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div >
 
                     <Link href="/about" passHref>
                         <div className="block px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50">
@@ -347,25 +356,16 @@ const Navbar = () => {
                         </div>
                     </Link >
 
-                    <div className="border-t mt-4 pt-4">
-                        <Link href="/account" passHref>
-                            <div className="flex items-center px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50">
-                                <FiUser className="mr-3" /> Account
-                            </div>
-                        </Link>
 
-                        <Link href="/privacy-policy" passHref>
-                            <div className="block px-5 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50">
-                                Privacy Policy
-                            </div>
-                        </Link >
 
-                        <Link href="/shipping-returns" passHref>
-                            <div className="block px-5 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50">
-                                Shipping & Returns
-                            </div>
-                        </Link >
-                    </div >
+                    <Link href="/policy" passHref>
+                        <div className="block px-5 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50">
+                            Privacy Policy
+                        </div>
+                    </Link >
+
+
+
                 </div >
             </motion.nav >
 
