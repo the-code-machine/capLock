@@ -11,7 +11,9 @@ import Link from "next/link";
 const ProductDetails = () => {
     const pathname = usePathname();
     const productId = pathname.split("/").pop(); // Extract product_id from URL
-    // Checkout Form State
+
+    // State hooks should be at the top level
+    const [product, setProduct] = useState(null);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -20,10 +22,13 @@ const ProductDetails = () => {
         address: "",
     });
 
-    // Find the product by ID
-    const product = products.find((p) => p.product_id === productId);
+    useEffect(() => {
+        // Find the product after the component mounts
+        const foundProduct = products.find((p) => p.product_id === productId);
+        setProduct(foundProduct);
+    }, [productId]);
 
-    // If product not found
+    // If product is not found, show a message
     if (!product) {
         return <div className="text-center text-2xl py-20">Product not found.</div>;
     }
