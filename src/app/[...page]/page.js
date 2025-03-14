@@ -7,7 +7,7 @@ import ProductsPage from '@/components/ProductPage'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-export default function page() {
+export default function Page() {
     const path = usePathname()
     const page = path.split('/').pop()
     return (
