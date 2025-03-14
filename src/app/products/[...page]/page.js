@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { FiCheckCircle, FiXCircle, FiTruck } from "react-icons/fi";
@@ -12,7 +12,7 @@ const ProductDetails = () => {
     const pathname = usePathname();
     const productId = pathname.split("/").pop(); // Extract product_id from URL
 
-    // State hooks should be at the top level
+    // Hooks must always be at the top level
     const [product, setProduct] = useState(null);
     const [formData, setFormData] = useState({
         name: "",
@@ -22,17 +22,11 @@ const ProductDetails = () => {
         address: "",
     });
 
+    // Fetch product data after the component mounts
     useEffect(() => {
-        // Find the product after the component mounts
         const foundProduct = products.find((p) => p.product_id === productId);
         setProduct(foundProduct);
     }, [productId]);
-
-    // If product is not found, show a message
-    if (!product) {
-        return <div className="text-center text-2xl py-20">Product not found.</div>;
-    }
-
 
 
     const [viewMode, setViewMode] = useState("checkout"); // checkout | customize
