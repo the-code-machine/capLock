@@ -40,8 +40,8 @@ async function sendOrderEmail(userEmail, userName, orderId) {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.EMAIL | 'caplock.connect@gmail.com', // Replace with your Gmail
-                pass: process.env.APP_PASSWORD | 'afez bejo xxza auiz' // Replace with your Gmail App Password
+                user: 'caplock.connect@gmail.com', // Replace with your Gmail
+                pass: 'afez bejo xxza auiz' // Replace with your Gmail App Password
             }
         });
 
