@@ -33,6 +33,7 @@ const Footer = () => {
                     <ul className="space-y-2 text-gray-300 text-sm">
                         <li><Link href="/faq" className="hover:text-white transition duration-300">FAQs</Link></li>
                         <li><Link href="/policy" className="hover:text-white transition duration-300">Privacy Policy</Link></li>
+                        <li><Link href="mailTo:caplock.connect@gmail.com" className="hover:text-white transition duration-300">Mail Us</Link></li>
                     </ul>
                 </div>
 

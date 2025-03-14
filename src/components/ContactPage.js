@@ -157,7 +157,7 @@ const ContactPage = () => {
                 >
                     <FiMail className="text-5xl text-gray-300 mb-4" />
                     <h3 className="text-xl font-semibold text-white">Email</h3>
-                    <p className="text-gray-400 mt-2">sarthakkhare821@gmail.com</p>
+                    <p className="text-gray-400 mt-2">caplock.connect@gmail.com</p>
                 </motion.div>
 
                 {/* Address */}

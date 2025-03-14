@@ -73,7 +73,7 @@ const ProductDetails = () => {
 
 
     return (
-        <section className="bg-white text-black py-20">
+        <section className="bg-white text-black md:py-20 py-8">
             <div className="container mx-auto px-6 lg:px-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Product Image */}
