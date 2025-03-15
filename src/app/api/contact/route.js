@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import connectDB from "@/mongodb";
+import connectDB from "@/lib/mongodb"; // Corrected import path
 import Contact from "@/models/contact";
 import nodemailer from "nodemailer";
+
 export async function POST(req) {
     try {
         await connectDB();
@@ -15,7 +16,10 @@ export async function POST(req) {
         });
 
         await newContact.save();
+
+        // Send confirmation email
         await sendContactEmail(formData.email, formData.name, formData.message);
+
         return NextResponse.json({ success: true, message: "Contact saved successfully!" }, { status: 200 });
     } catch (error) {
         console.error("Contact API Error:", error);
@@ -23,9 +27,8 @@ export async function POST(req) {
     }
 }
 
-
-// Function to send email
-async function sendContactEmail(userEmail, userName, orderId) {
+// Function to send contact email
+async function sendContactEmail(userEmail, userName, userMessage) {
     try {
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -50,7 +53,7 @@ async function sendContactEmail(userEmail, userName, orderId) {
         };
 
         await transporter.sendMail(mailOptions);
-        console.log("Order confirmation email sent to:", userEmail);
+        console.log("Contact confirmation email sent to:", userEmail);
     } catch (error) {
         console.error("Email sending error:", error);
     }

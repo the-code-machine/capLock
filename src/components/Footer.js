@@ -41,16 +41,14 @@ const Footer = () => {
                 <div className=" md:col-span-1 col-span-2">
                     <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                     <div className="flex space-x-4">
-                        <Link href="https://facebook.com" target="_blank" className="hover:text-gray-300 transition duration-300">
-                            <FiFacebook className="text-xl" />
-                        </Link>
-                        <Link href="https://instagram.com" target="_blank" className="hover:text-gray-300 transition duration-300">
+
+                        <Link href="https://instagram.com/caplock.store" target="_blank" className="hover:text-gray-300 transition duration-300">
                             <FiInstagram className="text-xl" />
                         </Link>
-                        <Link href="https://twitter.com" target="_blank" className="hover:text-gray-300 transition duration-300">
+                        <Link href="https://x.com/CaplockConnect" target="_blank" className="hover:text-gray-300 transition duration-300">
                             <FiTwitter className="text-xl" />
                         </Link>
-                        <Link href="https://linkedin.com" target="_blank" className="hover:text-gray-300 transition duration-300">
+                        <Link href="https://www.linkedin.com/in/caplock-store-0928b6356/" target="_blank" className="hover:text-gray-300 transition duration-300">
                             <FiLinkedin className="text-xl" />
                         </Link>
                     </div>

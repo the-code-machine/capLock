@@ -39,30 +39,54 @@ const ProductDetails = () => {
 
     // Handle Checkout Submission (Sends Data to Google Sheets)
     const handleSubmit = async () => {
-
+        // Show loading toast
         toast.loading("Submitting your order...");
 
         try {
+            // Include product details in the request
+            const orderData = {
+                ...formData,
+                product: {
+                    title: product?.title,
+                    price: product?.price,
+                    image: product?.images[0] // First product image
+                }
+            };
+
             const response = await fetch("/api/order", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(orderData)
             });
+
+            if (!response.ok) {
+                throw new Error("Failed to place order. Server returned an error.");
+            }
 
             const data = await response.json();
 
             if (data.success && data.orderId) {
                 toast.dismiss();
                 setOrderId(data.orderId);
-                toast.success(`Order Placed Successfully! 🎉\nOrder ID: ${data.orderId}`);
+
+                // Show success toast with order ID
+                toast.success(`🎉 Order Placed Successfully!\nOrder ID: ${data.orderId}`);
+
+                // Clear form after successful submission
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    pincode: "",
+                    address: ""
+                });
             } else {
-                toast.dismiss();
-                toast.error("Order submission failed. Please try again.");
+                throw new Error("Order submission failed. Please try again.");
             }
         } catch (error) {
-            console.error("Error:", error);
+            console.error("Order Submission Error:", error);
             toast.dismiss();
             toast.error("Something went wrong. Please try again later.");
         }

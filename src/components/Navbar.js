@@ -316,7 +316,7 @@ const Navbar = () => {
                 transition={{ type: "tween" }}
                 className="fixed top-0 right-0 z-40 w-full sm:w-80 h-full bg-white overflow-y-auto lg:hidden shadow-xl"
             >
-                <div className="p-5 border-b">
+                <div className="p-5 ">
                     <div className="flex items-center justify-between">
                         <Link href="/" passHref>
                             <div className="text-xl font-bold">CapLock</div>
@@ -359,7 +359,7 @@ const Navbar = () => {
 
 
                     <Link href="/policy" passHref>
-                        <div className="block px-5 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50">
+                        <div className="block px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50">
                             Privacy Policy
                         </div>
                     </Link >
