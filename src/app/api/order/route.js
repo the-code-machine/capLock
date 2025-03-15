@@ -66,7 +66,7 @@ async function sendOrderEmail(userEmail, userName, orderId, product) {
                     <p><strong>Order ID:</strong> ${orderId}</p>
 
                     <div style="display: flex; align-items: center; gap: 20px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;">
-                        <img src="${product.image}" alt="${product.title}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px;">
+                        <img src="${product.image}" alt="${product.title}" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px; margin-right:5px;">
                         <div>
                             <p><strong>Product:</strong> ${product.title}</p>
                             <p><strong>Price:</strong> ₹${product.price}</p>
