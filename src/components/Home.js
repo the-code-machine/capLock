@@ -8,7 +8,7 @@ import { FiPrinter, FiCpu, FiSettings } from "react-icons/fi";
 const HeroSection = () => {
 
     return (
-        <section className="relative w-full min-h-screen bg-gray-50 overflow-hidden flex items-center">
+        <section className="relative w-full min-h-[80vh] bg-gray-50 overflow-hidden flex items-center">
             <div className="container mx-auto px-6 lg:px-16 py-10 md:py-24">
                 <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
                     {/* Left Content */}
