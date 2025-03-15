@@ -1,0 +1,20 @@
+# robots.txt for https://caplock.in/
+
+# Allow all search engines to crawl everything
+User-agent: *
+Disallow: 
+
+# Sitemap location
+Sitemap: https://caplock.in/sitemap.xml
+
+# Prevent certain bots (e.g., web scrapers) from accessing sensitive sections of the site (optional)
+User-agent: Googlebot-Image
+Disallow: /images/
+
+# Prevent any crawlers from accessing admin area (adjust path if you have any admin URLs)
+User-agent: *
+Disallow: /admin/
+
+# Prevent crawlers from accessing login page (adjust path if you have login URLs)
+User-agent: *
+Disallow: /login/
