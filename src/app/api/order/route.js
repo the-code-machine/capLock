@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connectDB from "@/lib/mongodb"; // Ensure correct path
+import connectDB from "@/mongodb"; // Ensure correct path
 import Order from "@/models/order";
 import nodemailer from "nodemailer";
 
