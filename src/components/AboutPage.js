@@ -42,9 +42,9 @@ const AboutPage = () => {
             >
                 <h2 className="text-4xl font-bold mb-6 text-center">Who We Are</h2>
                 <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-                    CapLock is a next-generation tech company specializing in **3D Printing, IoT Solutions, and Robotics**.
+                    CapLock is a next-generation tech company specializing in 3D Printing, IoT Solutions, and Robotics.
                     We bridge the gap between creativity and technology, ensuring innovation in every project.
-                    Our mission is to **empower creators, businesses, and engineers** with custom solutions that redefine the future.
+                    Our mission is to empower creators, businesses, and engineers with custom solutions that redefine the future.
                 </p>
             </motion.div>
 
@@ -104,7 +104,7 @@ const AboutPage = () => {
             >
                 <h2 className="text-4xl font-bold">Let&apos;s Build the Future Together</h2>
                 <p className="text-gray-300 mt-3 max-w-2xl mx-auto">
-                    Whether you need a **custom prototype, an IoT solution, or an advanced robotics project**, we’re here to help.
+                    Whether you need a custom prototype, an IoT solution, or an advanced robotics project, we’re here to help.
                 </p>
                 <motion.a
                     href="/contact"

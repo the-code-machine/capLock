@@ -12,19 +12,19 @@ import "swiper/css/pagination";
 const recentActivities = [
     {
         title: "AICTE & IDEA Lab Exhibition",
-        date: "March 7, 2024",
+        date: "March 7, 2025",
         location: "AICTE Headquarter, Delhi",
         image: "/WhatsApp Image 2025-03-10 at 11.11.00_82f4339e.jpg" // Replace with actual image path
     },
     {
         title: "CapLock at AICTE Innovation Expo",
-        date: "March 7, 2024",
+        date: "March 7, 2025",
         location: "Delhi, India",
         image: "/WhatsApp Image 2025-03-10 at 11.12.01_e33e4771.jpg" // Replace with actual image path
     },
     {
         title: "Showcasing Our 3D Printing Innovations",
-        date: "March 7, 2024",
+        date: "March 7, 2025",
         location: "AICTE, Delhi",
         image: "/WhatsApp Image 2025-03-10 at 11.11.32_32446d93.jpg" // Replace with actual image path
     }

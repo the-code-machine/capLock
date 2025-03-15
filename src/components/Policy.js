@@ -49,7 +49,7 @@ const PolicyPage = () => {
                             <h2 className="text-3xl font-bold">Shipping Policy</h2>
                         </div>
                         <p className="text-gray-700 text-lg mt-4">
-                            We offer **fast & reliable** worldwide shipping. Orders are processed within **1-3 business days**.
+                            We offer fast & reliable worldwide shipping. Orders are processed within 1-3 business days.
                         </p>
                         <ul className="mt-6 space-y-4 text-gray-700">
                             <li className="flex items-center space-x-2">
@@ -58,11 +58,11 @@ const PolicyPage = () => {
                             </li>
                             <li className="flex items-center space-x-2">
                                 <FiClock className="text-blue-600 text-xl" />
-                                <span>Standard delivery: **5-7 business days**.</span>
+                                <span>Standard delivery: 5-7 business days.</span>
                             </li>
                             <li className="flex items-center space-x-2">
                                 <FiClock className="text-blue-600 text-xl" />
-                                <span>Express shipping: **2-3 business days**.</span>
+                                <span>Express shipping: 2-3 business days.</span>
                             </li>
                             <li className="flex items-center space-x-2">
                                 <FiCheckCircle className="text-green-600 text-xl" />
@@ -83,24 +83,24 @@ const PolicyPage = () => {
                             <h2 className="text-3xl font-bold">Return Policy</h2>
                         </div>
                         <p className="text-gray-300 text-lg mt-4">
-                            If you&apos;re not satisfied with your purchase, you can **return your item within 7 days**.
+                            If you&apos;re not satisfied with your purchase, you can return your item within 7 days.
                         </p>
                         <ul className="mt-6 space-y-4 text-gray-300">
                             <li className="flex items-center space-x-2">
                                 <FiCheckCircle className="text-green-500 text-xl" />
-                                <span>Items must be **unused & in original packaging**.</span>
+                                <span>Items must be unused & in original packaging.</span>
                             </li>
                             <li className="flex items-center space-x-2">
                                 <FiCheckCircle className="text-green-500 text-xl" />
-                                <span>Return requests must be made within **7 days**.</span>
+                                <span>Return requests must be made within 7 days.</span>
                             </li>
                             <li className="flex items-center space-x-2">
                                 <FiClock className="text-yellow-500 text-xl" />
-                                <span>Refunds processed within **5-10 business days**.</span>
+                                <span>Refunds processed within 5-10 business days.</span>
                             </li>
                             <li className="flex items-center space-x-2">
                                 <FiCheckCircle className="text-green-500 text-xl" />
-                                <span>Defective items qualify for **free return shipping**.</span>
+                                <span>Defective items qualify for free return shipping.</span>
                             </li>
                         </ul>
                     </motion.div>

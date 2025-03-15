@@ -20,7 +20,7 @@ const ProductsPage = () => {
                 >
                     <h2 className="text-4xl md:text-5xl font-extrabold">Our Products</h2>
                     <p className="text-lg text-gray-600 mt-3">
-                        Explore our latest innovations in **3D Printing, IoT, and Prototyping**.
+                        Explore our latest innovations in 3D Printing, IoT, and Prototyping.
                     </p>
                 </motion.div>
 

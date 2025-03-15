@@ -22,7 +22,7 @@ const AboutSection = () => {
                     </h2>
                     <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
                         At CapLock, we merge art with cutting-edge technology to bring your visions to life.
-                        Our expertise in **3D printing, IoT, and robotics** fuels innovation and precision.
+                        Our expertise in 3D printing, IoT, and robotics fuels innovation and precision.
                     </p>
                 </motion.div>
 
@@ -56,7 +56,7 @@ const AboutSection = () => {
                     >
                         <p className="text-lg text-gray-300">
                             Our journey began with a simple idea—to revolutionize the way technology interacts with creativity.
-                            Today, we are leaders in **digital manufacturing**, constantly pushing boundaries and delivering
+                            Today, we are leaders in digital manufacturing, constantly pushing boundaries and delivering
                             solutions that are both precise and innovative.
                         </p>
                         <p className="text-lg text-gray-300 mt-4">
