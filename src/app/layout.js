@@ -1,9 +1,10 @@
+import Head from "next/head";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
-import Head from "next/head";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,6 +14,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 export const metadata = {
   title: "CapLock - 3D Printing & IoT Solutions",
   description:
@@ -26,6 +28,8 @@ export const metadata = {
       "Premium 3D printing, IoT, and automation solutions tailored for creators and businesses.",
     url: "https://caplock.in",
     type: "website",
+    image:
+      "https://opengraph.b-cdn.net/production/images/faeec16f-6466-4324-a82f-13b82a7c1cce.png?token=J5PbbEj1LASFijYsfKFdojIN0vt1rI6SzNYqVV74Kh0&height=630&width=1200&expires=33278065246",
   },
 };
 
@@ -64,6 +68,15 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="https://caplock.in/favicon.ico" />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
+        {/* New Open Graph Meta Tags */}
+        <meta property="og:title" content={metadata.openGraph.title} />
+        <meta
+          property="og:description"
+          content={metadata.openGraph.description}
+        />
+        <meta property="og:url" content={metadata.openGraph.url} />
+        <meta property="og:type" content={metadata.openGraph.type} />
+        <meta property="og:image" content={metadata.openGraph.image} />
         {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -77,6 +90,13 @@ export default function RootLayout({ children }) {
         <meta name="twitter:site" content="@CaplockConnect" />
         <meta name="twitter:creator" content="@CaplockConnect" />
         <meta name="twitter:image" content="https://caplock.in/favicon.ico" />
+        {/* New Twitter Meta Tags */}
+        <meta name="twitter:title" content={metadata.openGraph.title} />
+        <meta
+          name="twitter:description"
+          content={metadata.openGraph.description}
+        />
+        <meta name="twitter:image" content={metadata.openGraph.image} />
         {/* Social Media Links */}
         <link rel="me" href="https://instagram.com/caplock.store" />
         <link rel="me" href="https://x.com/CaplockConnect" />
@@ -110,15 +130,13 @@ export default function RootLayout({ children }) {
         ></script>
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
+            __html: `window.dataLayer = window.dataLayer || [];
             function gtag() {
               dataLayer.push(arguments);
             }
             gtag('js', new Date());
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ID}',{
-            page_path: window.location.pathname,});
-            `,
+            page_path: window.location.pathname,});`,
           }}
         />
       </head>
