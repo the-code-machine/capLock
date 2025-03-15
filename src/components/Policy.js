@@ -54,7 +54,7 @@ const PolicyPage = () => {
                         <ul className="mt-6 space-y-4 text-gray-700">
                             <li className="flex items-center space-x-2">
                                 <FiCheckCircle className="text-green-600 text-xl" />
-                                <span>Free shipping on orders over $50.</span>
+                                <span>Free shipping on orders over ₹500.</span>
                             </li>
                             <li className="flex items-center space-x-2">
                                 <FiClock className="text-blue-600 text-xl" />

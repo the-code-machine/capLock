@@ -24,7 +24,7 @@ const ContactPage = () => {
         },
         {
             type: "Address",
-            value: "464240, Vidisha, Madhya Pradesh",
+            value: "464001, Vidisha, Madhya Pradesh",
             icon: <FiMapPin className="text-5xl text-gray-700 mb-4" />,
             link: "https://www.google.com/maps/search/?api=1&query=Vidisha+Madhya+Pradesh",
             bgColor: "bg-gray-100 text-black" // Light Gray
