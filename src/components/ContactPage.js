@@ -11,23 +11,23 @@ const ContactPage = () => {
         {
             type: "Phone",
             value: "+91 9752133459",
-            icon: <FiPhone className="text-5xl text-gray-300 mb-4" />,
+            icon: <FiPhone className="text-5xl text-gray-700 mb-4" />,
             link: "tel:+919752133459",
-            bgColor: "bg-gray-800" // Gray
+            bgColor: "bg-gray-100 text-black" // Light Gray
         },
         {
             type: "Email",
             value: "caplock.connect@gmail.com",
             icon: <FiMail className="text-5xl text-gray-300 mb-4" />,
             link: "mailto:caplock.connect@gmail.com",
-            bgColor: "bg-black" // Black (Middle Box)
+            bgColor: "bg-black text-white" // Black (Middle Box)
         },
         {
             type: "Address",
             value: "464240, Vidisha, Madhya Pradesh",
-            icon: <FiMapPin className="text-5xl text-gray-300 mb-4" />,
+            icon: <FiMapPin className="text-5xl text-gray-700 mb-4" />,
             link: "https://www.google.com/maps/search/?api=1&query=Vidisha+Madhya+Pradesh",
-            bgColor: "bg-gray-800" // Gray
+            bgColor: "bg-gray-100 text-black" // Light Gray
         }
     ];
     // State for form data
@@ -155,7 +155,7 @@ const ContactPage = () => {
 
             {/* Contact Details Section */}
             <motion.div
-                className="container mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center text-white"
+                className="container mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center "
                 initial="hidden"
                 animate="visible"
                 variants={{
@@ -171,10 +171,10 @@ const ContactPage = () => {
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(255,255,255,0.1)" }}
                         transition={{ duration: 0.3 }}
-                        className={`p-8 rounded-lg shadow-md border ${contact.bgColor} flex flex-col items-center cursor-pointer`}
+                        className={`p-8 rounded-lg shadow-md border  border-gray-100 ${contact.bgColor} flex flex-col items-center cursor-pointer`}
                     >
                         {contact.icon}
-                        <h3 className="text-xl font-semibold text-white">{contact.type}</h3>
+                        <h3 className="text-xl font-semibold ">{contact.type}</h3>
                         <p className="text-gray-400 mt-2">{contact.value}</p>
                     </motion.a>
                 ))}
