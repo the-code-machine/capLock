@@ -17,7 +17,7 @@ const recentActivities = [
         image: "/WhatsApp Image 2025-03-10 at 11.11.00_82f4339e.jpg" // Replace with actual image path
     },
     {
-        title: "CapLock at AICTE Innovation Expo",
+        title: "Our Team at AICTE Innovation Expo",
         date: "March 7, 2025",
         location: "Delhi, India",
         image: "/WhatsApp Image 2025-03-10 at 11.12.01_e33e4771.jpg" // Replace with actual image path
