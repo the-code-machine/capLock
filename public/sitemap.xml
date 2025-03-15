@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <!-- Homepage -->
     <url>
@@ -50,20 +49,12 @@
         <lastmod>2025-03-15T19:14:58+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.64</priority>
-        <image:image>
-            <image:loc>https://caplock.in/_next/image?url=https%3A%2F%2Ffbi.cults3d.com%2Fuploads%2Fcollection%2Fshot_en%2F101%2FMECHANICAL_QUICK_GRAB-RELEASE_PHONE_STAND_STL_FILE_3D_PRINTING.jpg&w=1080&q=75</image:loc>
-            <image:caption>3D Printed Product 001</image:caption>
-        </image:image>
     </url>
     <url>
         <loc>https://caplock.in/products/3DPRINT002</loc>
         <lastmod>2025-03-15T19:14:58+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.64</priority>
-        <image:image>
-            <image:loc>https://caplock.in/_next/image?url=https%3A%2F%2Fi.etsystatic.com%2F38732061%2Fr%2Fil%2F9b32ac%2F6744299007%2Fil_794xN.6744299007_jctr.jpg&w=1920&q=75</image:loc>
-            <image:caption>3D Printed Product 002</image:caption>
-        </image:image>
     </url>
 
     <!-- Additional Product Pages -->
