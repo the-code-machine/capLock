@@ -1,12 +1,10 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiCheckCircle, FiXCircle, FiTruck } from "react-icons/fi";
 import { products } from "@/data";
-
 const ProductSection = () => {
   const [randomProducts, setRandomProducts] = useState([]);
 
@@ -17,7 +15,6 @@ const ProductSection = () => {
       .slice(0, 6); // Select first 6 items
     setRandomProducts(shuffledProducts);
   }, []);
-
   return (
     <section className="bg-white text-black py-20">
       <div className="container mx-auto px-6 lg:px-16">
@@ -35,7 +32,6 @@ const ProductSection = () => {
             Explore our latest innovations in 3D Printing, IoT, and Prototyping.
           </p>
         </motion.div>
-
         {/* Product Grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -73,7 +69,6 @@ const ProductSection = () => {
                   loading="lazy"
                 />
               </div>
-
               {/* Content */}
               <div className="p-6">
                 <h3 className="text-xl font-bold">{product.title}</h3>
@@ -119,7 +114,6 @@ const ProductSection = () => {
             </motion.div>
           ))}
         </motion.div>
-
         {/* Explore More Button */}
         <motion.div
           className="text-center mt-12"
@@ -142,5 +136,4 @@ const ProductSection = () => {
     </section>
   );
 };
-
 export default ProductSection;

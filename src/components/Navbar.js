@@ -22,19 +22,15 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState("");
   const router = useRouter();
-
   const [query, setQuery] = useState("");
-
   // Filter products based on search query
   const filteredProducts = products.filter((product) =>
     product.title.toLowerCase().includes(query.toLowerCase())
   );
-
   // Handle search input change
   const handleSearchChange = (e) => {
     setQuery(e.target.value);
   };
-
   // Redirect to selected product page
   const handleProductClick = (productId) => {
     setQuery(""); // Clear search
@@ -43,23 +39,19 @@ const Navbar = () => {
   };
   // Mock cart items count - replace with your actual cart logic
   const cartItemsCount = 0;
-
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   // Close mobile menu when route changes
   useEffect(() => {
     setIsOpen(false);
     setDropdownOpen("");
   }, [router.pathname]);
-
   // Services dropdown items
   const serviceItems = [
     {
@@ -78,11 +70,9 @@ const Navbar = () => {
       href: "/services/robotics",
     },
   ];
-
   const toggleDropdown = (name) => {
     setDropdownOpen(dropdownOpen === name ? "" : name);
   };
-
   return (
     <>
       <header
@@ -106,7 +96,6 @@ const Navbar = () => {
                 </span>
               </motion.div>
             </Link>
-
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               <Link href="/products" passHref>
@@ -127,7 +116,6 @@ const Navbar = () => {
                   )}
                 </motion.div>
               </Link>
-
               {/* Services Dropdown */}
               {/* <div className="relative">
                                 <motion.button
@@ -163,7 +151,6 @@ const Navbar = () => {
                                     )}
                                 </AnimatePresence>
                             </div> */}
-
               <Link href="/about" passHref>
                 <motion.div
                   whileHover={{ y: -2 }}
@@ -182,7 +169,6 @@ const Navbar = () => {
                   )}
                 </motion.div>
               </Link>
-
               <Link href="/contact" passHref>
                 <motion.div
                   whileHover={{ y: -2 }}
@@ -201,7 +187,6 @@ const Navbar = () => {
                   )}
                 </motion.div>
               </Link>
-
               <Link href="/faq" passHref>
                 <motion.div
                   whileHover={{ y: -2 }}
@@ -221,7 +206,6 @@ const Navbar = () => {
                 </motion.div>
               </Link>
             </nav>
-
             {/* Right Navigation Icons */}
             <div className="flex items-center space-x-2 sm:space-x-4">
               {/* Search Button */}
@@ -233,7 +217,6 @@ const Navbar = () => {
               >
                 <FiSearch className="w-5 h-5" />
               </motion.button>
-
               {/* Cart Button */}
               {/* <motion.button
                                 whileHover={{ scale: 1.1 }}
@@ -248,7 +231,6 @@ const Navbar = () => {
                                     </span>
                                 )}
                             </motion.button> */}
-
               {/* Mobile Menu Toggle */}
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -265,7 +247,6 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-
         {/* Search Overlay */}
         <AnimatePresence>
           {searchOpen && (
@@ -294,7 +275,6 @@ const Navbar = () => {
                     <FiX />
                   </button>
                 </div>
-
                 {/* Search Results Dropdown */}
                 {query && (
                   <div className="bg-white shadow-md rounded-lg mt-2 max-h-60 overflow-auto">
@@ -323,7 +303,6 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </header>
-
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
@@ -337,7 +316,6 @@ const Navbar = () => {
           />
         )}
       </AnimatePresence>
-
       <motion.nav
         initial={{ x: "100%" }}
         animate={{ x: isOpen ? 0 : "100%" }}
@@ -358,7 +336,6 @@ const Navbar = () => {
             </motion.button>
           </div>
         </div>
-
         <div className="py-4">
           <Link href="/products" passHref>
             <div className="block px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50">
@@ -371,19 +348,16 @@ const Navbar = () => {
               About
             </div>
           </Link>
-
           <Link href="/contact" passHref>
             <div className="block px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50">
               Contact
             </div>
           </Link>
-
           <Link href="/faq" passHref>
             <div className="block px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50">
               FAQ
             </div>
           </Link>
-
           <Link href="/policy" passHref>
             <div className="block px-5 py-3 text-lg font-medium text-gray-700 hover:text-black hover:bg-gray-50">
               Privacy Policy
@@ -391,7 +365,6 @@ const Navbar = () => {
           </Link>
         </div>
       </motion.nav>
-
       {/* Cart Drawer Placeholder (This would be replaced by your actual CartDrawer component) */}
       <AnimatePresence>
         {cartOpen && (
@@ -434,7 +407,6 @@ const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-
       {/* Spacer to prevent content from hiding under fixed navbar */}
       <div
         className={`${scrolled ? "h-16" : "h-20"} transition-all duration-300`}
@@ -442,5 +414,4 @@ const Navbar = () => {
     </>
   );
 };
-
 export default Navbar;

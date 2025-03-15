@@ -1,9 +1,7 @@
 "use client";
-
 import React from "react";
 import { FiFacebook, FiInstagram, FiTwitter, FiLinkedin } from "react-icons/fi";
 import Link from "next/link";
-
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-12">
@@ -17,7 +15,6 @@ const Footer = () => {
             innovate to bring your ideas to life.
           </p>
         </div>
-
         {/* Quick Links */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -48,7 +45,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
         {/* Resources */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Resources</h3>
@@ -79,7 +75,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
         {/* Social Media */}
         <div className=" md:col-span-1 col-span-2">
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
@@ -111,7 +106,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-
       {/* Copyright Section */}
       <div className="text-center text-gray-500 text-sm mt-8 border-t border-gray-700 pt-4">
         &copy; {new Date().getFullYear()} CapLock. All rights reserved. |{" "}
@@ -125,5 +119,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;

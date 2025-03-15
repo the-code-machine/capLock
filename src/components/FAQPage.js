@@ -1,10 +1,8 @@
 "use client";
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiPlus, FiMinus } from "react-icons/fi";
-
 const faqs = [
   {
     question: "What is your shipping policy?",
@@ -32,14 +30,12 @@ const faqs = [
       "Once your order is shipped, you will receive a tracking number via email to monitor the delivery progress.",
   },
 ];
-
 const FaqPage = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
   return (
     <section>
       {/* Hero Section */}
@@ -119,7 +115,6 @@ const FaqPage = () => {
           ))}
         </div>
       </motion.div>
-
       {/* Contact Section (Black Background) */}
       <motion.div
         className="text-center py-16 bg-black text-white"
@@ -143,5 +138,4 @@ const FaqPage = () => {
     </section>
   );
 };
-
 export default FaqPage;

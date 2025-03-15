@@ -1,10 +1,8 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiTarget, FiUsers, FiAward } from "react-icons/fi";
-
 const AboutPage = () => {
   return (
     <section>
@@ -33,7 +31,6 @@ const AboutPage = () => {
           and Robotics solutions.
         </p>
       </div>
-
       {/* Who We Are Section (White Background) */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -50,7 +47,6 @@ const AboutPage = () => {
           redefine the future.
         </p>
       </motion.div>
-
       {/* Core Values Section (Alternating Background) */}
       <motion.div
         className="container mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
@@ -80,7 +76,6 @@ const AboutPage = () => {
             high-quality solutions.
           </p>
         </motion.div>
-
         {/* Value 2 */}
         <motion.div
           className="bg-black text-white p-8 rounded-lg shadow-md border border-gray-700 flex flex-col items-center"
@@ -96,7 +91,6 @@ const AboutPage = () => {
             solutions to fit their needs.
           </p>
         </motion.div>
-
         {/* Value 3 */}
         <motion.div
           className="bg-gray-100 p-8 rounded-lg shadow-md border border-gray-300 flex flex-col items-center"
@@ -115,7 +109,6 @@ const AboutPage = () => {
           </p>
         </motion.div>
       </motion.div>
-
       {/* Contact Section (Black Background) */}
       <motion.div
         className="text-center py-16 bg-black text-white"
@@ -142,5 +135,4 @@ const AboutPage = () => {
     </section>
   );
 };
-
 export default AboutPage;

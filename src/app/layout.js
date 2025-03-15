@@ -13,7 +13,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 export const metadata = {
   title: "CapLock - 3D Printing & IoT Solutions",
   description:
@@ -123,7 +122,6 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-
       <body>
         <Toaster />
         <Navbar />

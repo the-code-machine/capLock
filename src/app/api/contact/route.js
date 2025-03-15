@@ -1,26 +1,19 @@
 import { NextResponse } from "next/server";
-// Corrected import path
 import Contact from "@/models/contact";
 import nodemailer from "nodemailer";
-
 import connectDB from "@/mongodb";
 export async function POST(req) {
   try {
     await connectDB();
-
     const formData = await req.json();
-
     const newContact = new Contact({
       name: formData.name,
       email: formData.email,
       message: formData.message,
     });
-
     await newContact.save();
-
     // Send confirmation email
     await sendContactEmail(formData.email, formData.name, formData.message);
-
     return NextResponse.json(
       { success: true, message: "Contact saved successfully!" },
       { status: 200 }
@@ -33,7 +26,6 @@ export async function POST(req) {
     );
   }
 }
-
 // Function to send contact email
 async function sendContactEmail(userEmail, userName, userMessage) {
   try {
@@ -44,7 +36,6 @@ async function sendContactEmail(userEmail, userName, userMessage) {
         pass: "afez bejo xxza auiz", // Replace with your Gmail App Password
       },
     });
-
     const mailOptions = {
       from: "caplock.connect@gmail.com",
       to: userEmail,
@@ -58,7 +49,6 @@ async function sendContactEmail(userEmail, userName, userMessage) {
                 <p>Best Regards,<br/>CapLock Team</p>
             `,
     };
-
     await transporter.sendMail(mailOptions);
     console.log("Contact confirmation email sent to:", userEmail);
   } catch (error) {

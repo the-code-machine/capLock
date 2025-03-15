@@ -1,10 +1,8 @@
 "use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
 const AboutSection = () => {
   return (
     <section className="bg-black text-white py-20 md:py-28">
@@ -44,7 +42,6 @@ const AboutSection = () => {
               priority
             />
           </motion.div>
-
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -84,5 +81,4 @@ const AboutSection = () => {
     </section>
   );
 };
-
 export default AboutSection;

@@ -1,9 +1,7 @@
 "use client";
-
 import React from "react";
 import { FiTruck, FiShield, FiRefreshCcw, FiClock } from "react-icons/fi";
 import { motion } from "framer-motion";
-
 const shippingFeatures = [
   {
     title: "Fast & Secure Delivery",
@@ -26,7 +24,6 @@ const shippingFeatures = [
     icon: <FiClock className="text-5xl text-gray-300" />,
   },
 ];
-
 const ShippingSection = () => {
   return (
     <section className="bg-black text-white py-20">
@@ -89,5 +86,4 @@ const ShippingSection = () => {
     </section>
   );
 };
-
 export default ShippingSection;

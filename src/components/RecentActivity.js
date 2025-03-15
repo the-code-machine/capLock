@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -8,7 +7,6 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
 const recentActivities = [
   {
     title: "AICTE & IDEA Lab Exhibition",
@@ -29,7 +27,6 @@ const recentActivities = [
     image: "/3.jpg", // Replace with actual image path
   },
 ];
-
 const RecentActivity = () => {
   return (
     <section className="bg-black text-white py-16">
@@ -43,14 +40,12 @@ const RecentActivity = () => {
         >
           Recent Activity
         </motion.h2>
-
         <p className="text-center text-gray-300 text-lg mb-8">
           We participated in an exhibition conducted by AICTE & IDEA Lab on{" "}
           <strong>7th March</strong> at{" "}
           <strong>AICTE Headquarter, Delhi</strong>, where we showcased our
           latest innovations in 3D printing and IoT solutions.
         </p>
-
         {/* Swiper Slider */}
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -84,7 +79,6 @@ const RecentActivity = () => {
                     className="rounded-t-lg   object-cover  object-left-top"
                   />
                 </div>
-
                 {/* Content */}
                 <div className="p-6 overflow-hidden">
                   <h3 className="text-xl font-bold text-white w-full truncate">
@@ -102,5 +96,4 @@ const RecentActivity = () => {
     </section>
   );
 };
-
 export default RecentActivity;

@@ -1,10 +1,8 @@
 "use client";
-
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiTruck, FiRefreshCcw, FiClock, FiCheckCircle } from "react-icons/fi";
-
 const PolicyPage = () => {
   return (
     <section>
@@ -72,7 +70,6 @@ const PolicyPage = () => {
               </li>
             </ul>
           </motion.div>
-
           {/* Return Policy */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,7 +106,6 @@ const PolicyPage = () => {
           </motion.div>
         </div>
       </div>
-
       {/* Contact Section (Black Background) */}
       <motion.div
         className="text-center py-16 bg-black text-white"
@@ -134,5 +130,4 @@ const PolicyPage = () => {
     </section>
   );
 };
-
 export default PolicyPage;

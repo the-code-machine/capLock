@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,7 +45,6 @@ const HeroSection = () => {
               </Link>
             </div>
           </motion.div>
-
           {/* Right Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -70,7 +68,6 @@ const HeroSection = () => {
     </section>
   );
 };
-
 export const IncubationSection = () => {
   const incubators = [
     {
@@ -130,7 +127,6 @@ export const IncubationSection = () => {
                 height={80}
               />
             </div>
-
             {/* Title */}
             <h3 className="text-xl font-semibold text-gray-700">
               {incubator.name}
@@ -146,5 +142,4 @@ export const IncubationSection = () => {
     </section>
   );
 };
-
 export default HeroSection;

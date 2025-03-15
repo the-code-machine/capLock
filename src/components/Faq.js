@@ -1,9 +1,7 @@
 "use client";
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiPlus, FiMinus } from "react-icons/fi";
-
 const faqs = [
   {
     question: "What is your shipping policy?",
@@ -31,14 +29,12 @@ const faqs = [
       "Once your order is shipped, you will receive a tracking number via email to monitor the delivery progress.",
   },
 ];
-
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
   return (
     <section className="bg-white text-black py-20">
       <div className="container mx-auto px-6 lg:px-16">
@@ -93,7 +89,6 @@ const FaqSection = () => {
                     )}
                   </motion.div>
                 </button>
-
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isOpen ? 1 : 0 }}
@@ -112,5 +107,4 @@ const FaqSection = () => {
     </section>
   );
 };
-
 export default FaqSection;

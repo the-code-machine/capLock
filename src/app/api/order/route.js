@@ -2,16 +2,12 @@ import { NextResponse } from "next/server";
 import connectDB from "@/mongodb"; // Ensure correct path
 import Order from "@/models/order";
 import nodemailer from "nodemailer";
-
 export async function POST(req) {
   try {
     await connectDB();
-
     const formData = await req.json();
-
     // Generate a unique order ID (e.g., ORD-12345)
     const orderId = "ORD-" + Math.floor(10000 + Math.random() * 90000);
-
     // Save order with product details in MongoDB
     const newOrder = new Order({
       orderId,
@@ -26,9 +22,7 @@ export async function POST(req) {
         image: formData.product.image,
       },
     });
-
     await newOrder.save();
-
     // Send confirmation email
     await sendOrderEmail(
       formData.email,
@@ -36,7 +30,6 @@ export async function POST(req) {
       orderId,
       formData.product
     );
-
     return NextResponse.json({ success: true, orderId }, { status: 200 });
   } catch (error) {
     console.error("Order API Error:", error);
@@ -46,7 +39,6 @@ export async function POST(req) {
     );
   }
 }
-
 // Function to send order confirmation email
 async function sendOrderEmail(userEmail, userName, orderId, product) {
   try {
@@ -57,7 +49,6 @@ async function sendOrderEmail(userEmail, userName, orderId, product) {
         pass: "afez bejo xxza auiz", // Replace with your Gmail App Password
       },
     });
-
     const mailOptions = {
       from: '"CapLock Team" <caplock.connect@gmail.com>',
       replyTo: "support@caplock.com", // Helps avoid spam
@@ -92,7 +83,6 @@ async function sendOrderEmail(userEmail, userName, orderId, product) {
         "X-MSMail-Priority": "High",
       },
     };
-
     await transporter.sendMail(mailOptions);
     console.log("Order confirmation email sent to:", userEmail);
   } catch (error) {

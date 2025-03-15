@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -7,11 +6,9 @@ import { FiCheckCircle, FiXCircle, FiTruck } from "react-icons/fi";
 import { products } from "@/data";
 import toast from "react-hot-toast";
 import Link from "next/link";
-
 const ProductDetails = () => {
   const pathname = usePathname();
   const productId = pathname.split("/").pop(); // Extract product_id from URL
-
   // Hooks must always be at the top level
   const [product, setProduct] = useState(null);
   const [formData, setFormData] = useState({
@@ -21,26 +18,21 @@ const ProductDetails = () => {
     pincode: "",
     address: "",
   });
-
   // Fetch product data after the component mounts
   useEffect(() => {
     const foundProduct = products.find((p) => p.product_id === productId);
     setProduct(foundProduct);
   }, [productId]);
-
   const [viewMode, setViewMode] = useState("checkout"); // checkout | customize
   const [orderId, setOrderId] = useState(null);
-
   // Handle Input Change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   // Handle Checkout Submission (Sends Data to Google Sheets)
   const handleSubmit = async () => {
     // Show loading toast
     toast.loading("Submitting your order...");
-
     try {
       // Include product details in the request
       const orderData = {
@@ -51,7 +43,6 @@ const ProductDetails = () => {
           image: product?.images[0], // First product image
         },
       };
-
       const response = await fetch("/api/order", {
         method: "POST",
         headers: {
@@ -63,18 +54,14 @@ const ProductDetails = () => {
       if (!response.ok) {
         throw new Error("Failed to place order. Server returned an error.");
       }
-
       const data = await response.json();
-
       if (data.success && data.orderId) {
         toast.dismiss();
         setOrderId(data.orderId);
-
         // Show success toast with order ID
         toast.success(
           `🎉 Order Placed Successfully!\nOrder ID: ${data.orderId}`
         );
-
         // Clear form after successful submission
         setFormData({
           name: "",
@@ -92,7 +79,6 @@ const ProductDetails = () => {
       toast.error("Something went wrong. Please try again later.");
     }
   };
-
   return (
     <section className="bg-white text-black md:py-20 py-8">
       <div className="container mx-auto px-6 lg:px-16">
@@ -107,12 +93,10 @@ const ProductDetails = () => {
               className="rounded-lg shadow-lg"
             />
           </div>
-
           {/* Product Details */}
           <div>
             <h1 className="text-4xl font-bold">{product?.title}</h1>
             <p className="text-gray-700 mt-4">{product?.description}</p>
-
             {/* Availability */}
             <div className="flex items-center gap-2 mt-4 text-lg font-medium">
               {product?.available ? (
@@ -128,16 +112,13 @@ const ProductDetails = () => {
                 {product?.available ? "In Stock" : "Out of Stock"}
               </span>
             </div>
-
             {/* Delivery Time */}
             <div className="flex items-center gap-2 text-lg text-gray-500 mt-2">
               <FiTruck className="text-xl" />
               <span>Delivery: {product?.delivery_time}</span>
             </div>
-
             {/* Price */}
             <p className="text-3xl font-semibold mt-6">₹{product?.price}</p>
-
             {/* Toggle Buttons */}
             <div className="flex gap-4 mt-4">
               <button
@@ -163,7 +144,6 @@ const ProductDetails = () => {
             </div>
           </div>
         </div>
-
         {/* Checkout Form */}
         {viewMode === "checkout" && !orderId && (
           <div className="mt-16 bg-gray-100 md:p-8 p-4 rounded-lg shadow-md flex flex-col justify-center items-center">
@@ -171,7 +151,6 @@ const ProductDetails = () => {
             <p className="text-gray-600 text-center mt-2">
               Fill in your details to complete the purchase.
             </p>
-
             <form className="mt-6 md:max-w-2xl w-full md:mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <input
@@ -193,7 +172,6 @@ const ProductDetails = () => {
                   className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
-
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 <input
                   type="tel"
@@ -214,7 +192,6 @@ const ProductDetails = () => {
                   className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
-
               <textarea
                 name="address"
                 placeholder="Full Address"
@@ -233,7 +210,6 @@ const ProductDetails = () => {
             </button>
           </div>
         )}
-
         {/* WhatsApp Customization Section */}
         {viewMode === "customize" && (
           <div className="mt-16 bg-gray-100 p-8 rounded-lg shadow-md text-center">
@@ -260,7 +236,6 @@ const ProductDetails = () => {
             </div>
           </div>
         )}
-
         {/* Thank You Message */}
         {orderId && (
           <div className="mt-16 bg-green-100 p-8 rounded-lg shadow-md text-center">
@@ -275,5 +250,4 @@ const ProductDetails = () => {
     </section>
   );
 };
-
 export default ProductDetails;

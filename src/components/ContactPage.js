@@ -1,11 +1,9 @@
 "use client";
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import toast from "react-hot-toast";
-
 const ContactPage = () => {
   const ContactLinks = [
     {
@@ -36,12 +34,10 @@ const ContactPage = () => {
     email: "",
     message: "",
   });
-
   // Handle input change
   const handleChange = (e) => {
     setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
   };
-
   // Handle form submission
   const handleContactSubmit = async (e) => {
     e.preventDefault();
@@ -55,9 +51,7 @@ const ContactPage = () => {
         },
         body: JSON.stringify(contactFormData),
       });
-
       const data = await response.json();
-
       if (data.success) {
         toast.dismiss();
         toast.success("Message sent successfully! 🎉");
@@ -72,7 +66,6 @@ const ContactPage = () => {
       toast.error("Something went wrong. Please try again later.");
     }
   };
-
   return (
     <section>
       {/* Hero Section */}
@@ -113,7 +106,6 @@ const ContactPage = () => {
         <p className="text-gray-700 text-lg max-w-3xl mx-auto text-center">
           Fill out the form below and our team will get back to you shortly.
         </p>
-
         <form onSubmit={handleContactSubmit} className="mt-8 max-w-2xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <input
@@ -154,7 +146,6 @@ const ContactPage = () => {
           </motion.button>
         </form>
       </motion.div>
-
       {/* Contact Details Section */}
       <motion.div
         className="container mx-auto px-6 lg:px-16 py-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center "
@@ -191,5 +182,4 @@ const ContactPage = () => {
     </section>
   );
 };
-
 export default ContactPage;
