@@ -7,6 +7,29 @@ import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import toast from "react-hot-toast";
 
 const ContactPage = () => {
+    const ContactLinks = [
+        {
+            type: "Phone",
+            value: "+91 9752133459",
+            icon: <FiPhone className="text-5xl text-gray-300 mb-4" />,
+            link: "tel:+919752133459",
+            bgColor: "bg-gray-800" // Gray
+        },
+        {
+            type: "Email",
+            value: "caplock.connect@gmail.com",
+            icon: <FiMail className="text-5xl text-gray-300 mb-4" />,
+            link: "mailto:caplock.connect@gmail.com",
+            bgColor: "bg-black" // Black (Middle Box)
+        },
+        {
+            type: "Address",
+            value: "464240, Vidisha, Madhya Pradesh",
+            icon: <FiMapPin className="text-5xl text-gray-300 mb-4" />,
+            link: "https://www.google.com/maps/search/?api=1&query=Vidisha+Madhya+Pradesh",
+            bgColor: "bg-gray-800" // Gray
+        }
+    ];
     // State for form data
     const [contactFormData, setContactFormData] = useState({
         name: "",
@@ -140,35 +163,21 @@ const ContactPage = () => {
                     visible: { opacity: 1, y: 0, transition: { delay: 0.3, staggerChildren: 0.2 } }
                 }}
             >
-                {/* Phone */}
-                <motion.div
-                    className="p-8 rounded-lg shadow-md border bg-black flex flex-col items-center"
-                    variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-                >
-                    <FiPhone className="text-5xl text-gray-300 mb-4" />
-                    <h3 className="text-xl font-semibold text-white">Phone</h3>
-                    <p className="text-gray-400 mt-2">+91 9752133459</p>
-                </motion.div>
-
-                {/* Email */}
-                <motion.div
-                    className="p-8 rounded-lg shadow-md border bg-black flex flex-col items-center"
-                    variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-                >
-                    <FiMail className="text-5xl text-gray-300 mb-4" />
-                    <h3 className="text-xl font-semibold text-white">Email</h3>
-                    <p className="text-gray-400 mt-2">caplock.connect@gmail.com</p>
-                </motion.div>
-
-                {/* Address */}
-                <motion.div
-                    className="p-8 rounded-lg shadow-md border bg-black flex flex-col items-center"
-                    variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-                >
-                    <FiMapPin className="text-5xl text-gray-300 mb-4" />
-                    <h3 className="text-xl font-semibold text-white">Address</h3>
-                    <p className="text-gray-400 mt-2">464240, Vidisha, Madhya Pradesh</p>
-                </motion.div>
+                {ContactLinks.map((contact, index) => (
+                    <motion.a
+                        key={index}
+                        href={contact.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(255,255,255,0.1)" }}
+                        transition={{ duration: 0.3 }}
+                        className={`p-8 rounded-lg shadow-md border ${contact.bgColor} flex flex-col items-center cursor-pointer`}
+                    >
+                        {contact.icon}
+                        <h3 className="text-xl font-semibold text-white">{contact.type}</h3>
+                        <p className="text-gray-400 mt-2">{contact.value}</p>
+                    </motion.a>
+                ))}
             </motion.div>
         </section>
     );
