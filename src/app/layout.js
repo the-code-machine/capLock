@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "CapLock - 3D Printing & IoT Solutions",
   description: "Discover premium 3D printing, IoT, and prototyping solutions at CapLock. Get custom designs, smart automation, and advanced robotics.",
-  keywords: "3D printing, IoT solutions, prototyping, robotics, custom design, smart automation",
+  keywords: "CapLock, Caplock SATI, Caplock Variablex, Caplock 3d, Caplock IOT, SATI Vidisha, 3D printing, IoT solutions, prototyping, robotics, custom design, smart automation",
   authors: [{ name: "CapLock Team", url: "https://caplock.in" }],
   openGraph: {
     title: "CapLock - Innovate with 3D Printing & IoT",
