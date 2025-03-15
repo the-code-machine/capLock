@@ -32,8 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        {/* Favicon */}
+      <head >       {/* Favicon */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
@@ -106,7 +105,7 @@ export default function RootLayout({ children }) {
         />
 
 
-      </Head>
+      </head>
 
 
       <body>
