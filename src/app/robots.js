@@ -5,6 +5,6 @@ export default function robots() {
       allow: '*',
       // Add any disallow rules as needed
     },
-    sitemap: 'https://your-domain.com/sitemap.xml', // Update with your actual domain
+    sitemap: 'https://caplock.in/robots.txt', // Update with your actual domain
   };
 }
