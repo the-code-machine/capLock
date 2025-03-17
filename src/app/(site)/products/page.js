@@ -1,10 +1,6 @@
 'use client'
 import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import AboutPage from '@/components/AboutPage'
-import ContactPage from '@/components/ContactPage'
-import FaqPage from '@/components/FAQPage'
-import PolicyPage from '@/components/Policy'
 import ProductsPage from '@/components/ProductPage'
 
 export default function Page() {
@@ -30,11 +26,9 @@ export default function Page() {
 
     return (
         <div>
-            {page === 'about' && <AboutPage />}
-            {page === 'contact' && <ContactPage />}
-            {page === 'faq' && <FaqPage />}
-            {page === 'policy' && <PolicyPage />}
-            {page === 'products' && <ProductsPage />}
+
+
+            <ProductsPage />
         </div>
     )
 }
