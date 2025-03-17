@@ -6,10 +6,10 @@ import ProductSection from "@/components/ProductSection";
 import RecentActivity from "@/components/RecentActivity";
 import ShippingSection from "@/components/Shipping";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 export default function Home() {
   const path = usePathname()
   const page = path.split('/').pop()
-
   // Map paths to page titles
   const pageTitles = {
     about: "About Us - CapLock",
