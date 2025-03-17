@@ -5,6 +5,7 @@ import HeroSection, { IncubationSection } from "@/components/Home";
 import ProductSection from "@/components/ProductSection";
 import RecentActivity from "@/components/RecentActivity";
 import ShippingSection from "@/components/Shipping";
+import { usePathname } from "next/navigation";
 export default function Home() {
   const path = usePathname()
   const page = path.split('/').pop()
