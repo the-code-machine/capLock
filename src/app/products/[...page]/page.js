@@ -118,26 +118,24 @@ const ProductDetails = () => {
               <span>Delivery: {product?.delivery_time}</span>
             </div>
             {/* Price */}
-            <p className="text-3xl font-semibold mt-6">₹{product?.price}</p>
+            <p className="text-3xl font-semibold mt-6">₹{product?.price} onwards</p>
             {/* Toggle Buttons */}
             <div className="flex gap-4 mt-4">
               <button
                 onClick={() => setViewMode("checkout")}
-                className={`px-6 py-3 font-medium rounded-md  cursor-pointer shadow-md transition-all ${
-                  viewMode === "checkout"
+                className={`px-6 py-3 font-medium rounded-md  cursor-pointer shadow-md transition-all ${viewMode === "checkout"
                     ? "bg-black text-white"
                     : "bg-gray-200 text-black"
-                }`}
+                  }`}
               >
                 Checkout
               </button>
               <button
                 onClick={() => setViewMode("customize")}
-                className={`px-6 py-3 font-medium rounded-md cursor-pointer shadow-md transition-all ${
-                  viewMode === "customize"
+                className={`px-6 py-3 font-medium rounded-md cursor-pointer shadow-md transition-all ${viewMode === "customize"
                     ? "bg-black text-white"
                     : "bg-gray-200 text-black"
-                }`}
+                  }`}
               >
                 Customize
               </button>

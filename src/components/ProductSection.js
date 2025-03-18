@@ -107,7 +107,7 @@ const ProductSection = () => {
                     </motion.div>
                   </Link>
                   <p className="text-2xl font-semibold mt-4">
-                    ₹{product.price}
+                    ₹{product.price} onwards
                   </p>
                 </div>
               </div>

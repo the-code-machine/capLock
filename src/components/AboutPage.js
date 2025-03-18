@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { FiTarget, FiUsers, FiAward } from "react-icons/fi";
 const AboutPage = () => {
   return (
-    <section>
+    <section className="bg-white ">
       {/* Hero Section (Black Background) */}
       <div className="relative w-full h-[60vh] bg-black text-white flex flex-col justify-center items-center text-center px-6">
         <div className="absolute inset-0">

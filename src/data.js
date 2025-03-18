@@ -5,7 +5,7 @@ export const products = [
     title: "Custom 3D Printed Phone Stand",
     description:
       "Durable and stylish 3D printed phone stand, available in multiple colors.",
-    price: 599,
+    price: 199,
     available: true,
     delivery_time: "5-7 days",
     images: [
@@ -18,7 +18,7 @@ export const products = [
     title: "Artistic 3D Printed Vase",
     description:
       "A beautifully designed 3D printed vase perfect for home decor.",
-    price: 1299,
+    price: 599,
     available: true,
     delivery_time: "7-10 days",
     images: [
@@ -30,7 +30,7 @@ export const products = [
     category: "3D Printing",
     title: "Personalized 3D Printed Keychain",
     description: "Custom keychains with engraved text, perfect as a gift.",
-    price: 299,
+    price: 149,
     available: true,
     delivery_time: "4-6 days",
     images: [
@@ -42,7 +42,7 @@ export const products = [
     category: "3D Printing",
     title: "Miniature Architectural Model",
     description: "Precision 3D printed model for architects and designers.",
-    price: 2499,
+    price: 499,
     available: true,
     delivery_time: "10-14 days",
     images: [
@@ -66,7 +66,7 @@ export const products = [
     category: "IoT and Robotics Projects",
     title: "Smart Home IoT Kit",
     description: "DIY IoT kit for automating home appliances.",
-    price: 3499,
+    price: 999,
     available: true,
     delivery_time: "5-7 days",
     images: [
@@ -78,7 +78,7 @@ export const products = [
     category: "IoT and Robotics Projects",
     title: "Autonomous Line-Following Robot",
     description: "Arduino-based autonomous robot that follows black lines.",
-    price: 2999,
+    price: 899,
     available: true,
     delivery_time: "7-10 days",
     images: [
@@ -90,7 +90,7 @@ export const products = [
     category: "IoT and Robotics Projects",
     title: "Smart Irrigation System",
     description: "Automated irrigation system for optimized plant watering.",
-    price: 3999,
+    price: 899,
     available: true,
     delivery_time: "7-10 days",
     images: [
@@ -102,7 +102,7 @@ export const products = [
     category: "IoT and Robotics Projects",
     title: "IoT Temperature Monitoring System",
     description: "Remote temperature monitoring for industrial applications.",
-    price: 4499,
+    price: 499,
     available: true,
     delivery_time: "5-8 days",
     images: [
@@ -114,7 +114,7 @@ export const products = [
     category: "IoT and Robotics Projects",
     title: "Gesture-Controlled Robot",
     description: "A robot controlled using hand gestures.",
-    price: 4999,
+    price: 899,
     available: true,
     delivery_time: "10-14 days",
     images: [
@@ -128,7 +128,7 @@ export const products = [
     title: "3D Printed Miniature Figurines",
     description:
       "Customized miniature figurines based on your favorite characters or designs.",
-    price: 1499,
+    price: 499,
     available: true,
     delivery_time: "7-10 days",
     images: [
@@ -141,7 +141,7 @@ export const products = [
     title: "Custom 3D Printed Earrings",
     description:
       "Unique and stylish 3D printed earrings in various colors and designs.",
-    price: 599,
+    price: 149,
     available: true,
     delivery_time: "5-7 days",
     images: [
@@ -154,7 +154,7 @@ export const products = [
     title: "3D Printed LED Lithophane",
     description:
       "Personalized lithophane lamps that illuminate your favorite images.",
-    price: 1999,
+    price: 249,
     available: true,
     delivery_time: "7-12 days",
     images: [
@@ -167,7 +167,7 @@ export const products = [
     title: "3D Printed Desk Organizer",
     description:
       "A modern, multi-compartment desk organizer for office or study use.",
-    price: 999,
+    price: 199,
     available: true,
     delivery_time: "5-8 days",
     images: ["https://proto3000.com/wp-content/uploads/2014/01/183.jpg"],
@@ -178,7 +178,7 @@ export const products = [
     title: "3D Printed Drone Frame",
     description:
       "Lightweight, durable drone frames customized to fit your design.",
-    price: 4999,
+    price: 299,
     available: true,
     delivery_time: "10-14 days",
     images: [
@@ -191,7 +191,7 @@ export const products = [
     title: "Custom Enclosures for Electronics",
     description:
       "3D printed enclosures for circuit boards, IoT devices, and more.",
-    price: 1999,
+    price: 99,
     available: true,
     delivery_time: "7-10 days",
     images: [
@@ -204,7 +204,7 @@ export const products = [
     title: "3D Printed Gear Assembly",
     description:
       "High-precision 3D printed gears for mechanical projects and engineering prototypes.",
-    price: 2999,
+    price: 199,
     available: true,
     delivery_time: "7-12 days",
     images: [
@@ -217,7 +217,7 @@ export const products = [
     title: "3D Printed Industrial Brackets",
     description:
       "Strong and durable industrial brackets for various applications.",
-    price: 3999,
+    price: 199,
     available: true,
     delivery_time: "10-15 days",
     images: [
@@ -230,7 +230,7 @@ export const products = [
     title: "3D Printed Robotic Arm Parts",
     description:
       "Precision-printed robotic arm components for automation projects.",
-    price: 5999,
+    price: 499,
     available: true,
     delivery_time: "10-20 days",
     images: ["https://m.media-amazon.com/images/I/71QjW7XRPQL.jpg"],

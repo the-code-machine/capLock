@@ -76,11 +76,10 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed w-full z-50 transition-all duration-300 shadow-md ${
-          scrolled
+        className={`fixed w-full z-50 transition-all duration-300 shadow-md ${scrolled
             ? "bg-white shadow-md py-3"
             : "bg-white/90 backdrop-blur-md py-4"
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
@@ -101,11 +100,10 @@ const Navbar = () => {
               <Link href="/products" passHref>
                 <motion.div
                   whileHover={{ y: -2 }}
-                  className={`font-medium relative ${
-                    router.pathname === "/products"
+                  className={`font-medium relative ${router.pathname === "/products"
                       ? "text-black"
                       : "text-gray-600 hover:text-black"
-                  }`}
+                    }`}
                 >
                   Products
                   {router.pathname === "/products" && (
@@ -116,49 +114,14 @@ const Navbar = () => {
                   )}
                 </motion.div>
               </Link>
-              {/* Services Dropdown */}
-              {/* <div className="relative">
-                                <motion.button
-                                    whileHover={{ y: -2 }}
-                                    className={`flex items-center font-medium ${dropdownOpen === "services" ? "text-black" : "text-gray-600 hover:text-black"}`}
-                                    onClick={() => toggleDropdown("services")}
-                                >
-                                    Services
-                                    <FiChevronDown className={`ml-1 transform transition-transform ${dropdownOpen === "services" ? "rotate-180" : ""}`} />
-                                </motion.button>
 
-                                <AnimatePresence>
-                                    {dropdownOpen === "services" && (
-                                        <motion.div
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            exit={{ opacity: 0, y: 10 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="absolute top-full left-0 mt-2 w-60 bg-white rounded-md shadow-lg py-2 z-20"
-                                        >
-                                            {serviceItems.map((item) => (
-                                                <Link key={item.name} href={item.href} passHref>
-                                                    <motion.div
-                                                        whileHover={{ x: 5 }}
-                                                        className="flex items-center px-4 py-3 text-gray-700 hover:text-black"
-                                                    >
-                                                        {item.icon}
-                                                        {item.name}
-                                                    </motion.div>
-                                                </Link>
-                                            ))}
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div> */}
               <Link href="/about" passHref>
                 <motion.div
                   whileHover={{ y: -2 }}
-                  className={`font-medium relative ${
-                    router.pathname === "/about"
+                  className={`font-medium relative ${router.pathname === "/about"
                       ? "text-black"
                       : "text-gray-600 hover:text-black"
-                  }`}
+                    }`}
                 >
                   About
                   {router.pathname === "/about" && (
@@ -172,11 +135,10 @@ const Navbar = () => {
               <Link href="/contact" passHref>
                 <motion.div
                   whileHover={{ y: -2 }}
-                  className={`font-medium relative ${
-                    router.pathname === "/contact"
+                  className={`font-medium relative ${router.pathname === "/contact"
                       ? "text-black"
                       : "text-gray-600 hover:text-black"
-                  }`}
+                    }`}
                 >
                   Contact
                   {router.pathname === "/contact" && (
@@ -190,11 +152,10 @@ const Navbar = () => {
               <Link href="/faq" passHref>
                 <motion.div
                   whileHover={{ y: -2 }}
-                  className={`font-medium relative ${
-                    router.pathname === "/faq"
+                  className={`font-medium relative ${router.pathname === "/faq"
                       ? "text-black"
                       : "text-gray-600 hover:text-black"
-                  }`}
+                    }`}
                 >
                   FAQ
                   {router.pathname === "/faq" && (
@@ -217,21 +178,7 @@ const Navbar = () => {
               >
                 <FiSearch className="w-5 h-5" />
               </motion.button>
-              {/* Cart Button */}
-              {/* <motion.button
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                                onClick={() => setCartOpen(true)}
-                                className="p-2 text-gray-700 hover:text-black hover:bg-gray-100 rounded-full relative"
-                            >
-                                <FiShoppingCart className="w-5 h-5" />
-                                {cartItemsCount > 0 && (
-                                    <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 bg-black text-white text-xs rounded-full">
-                                        {cartItemsCount}
-                                    </span>
-                                )}
-                            </motion.button> */}
-              {/* Mobile Menu Toggle */}
+
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -409,7 +356,7 @@ const Navbar = () => {
       </AnimatePresence>
       {/* Spacer to prevent content from hiding under fixed navbar */}
       <div
-        className={`${scrolled ? "h-16" : "h-20"} transition-all duration-300`}
+        className={`${scrolled ? "h-12" : "h-16"} transition-all duration-300`}
       />
     </>
   );
