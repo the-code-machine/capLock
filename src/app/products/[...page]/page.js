@@ -118,14 +118,14 @@ const ProductDetails = () => {
               <span>Delivery: {product?.delivery_time}</span>
             </div>
             {/* Price */}
-            <p className="text-3xl font-semibold mt-6">₹{product?.price} onwards</p>
+            <p className="text-3xl font-semibold mt-6">₹{product?.price} <span className="text-lg">onwards</span> </p>
             {/* Toggle Buttons */}
             <div className="flex gap-4 mt-4">
               <button
                 onClick={() => setViewMode("checkout")}
                 className={`px-6 py-3 font-medium rounded-md  cursor-pointer shadow-md transition-all ${viewMode === "checkout"
-                    ? "bg-black text-white"
-                    : "bg-gray-200 text-black"
+                  ? "bg-black text-white"
+                  : "bg-gray-200 text-black"
                   }`}
               >
                 Checkout
@@ -133,8 +133,8 @@ const ProductDetails = () => {
               <button
                 onClick={() => setViewMode("customize")}
                 className={`px-6 py-3 font-medium rounded-md cursor-pointer shadow-md transition-all ${viewMode === "customize"
-                    ? "bg-black text-white"
-                    : "bg-gray-200 text-black"
+                  ? "bg-black text-white"
+                  : "bg-gray-200 text-black"
                   }`}
               >
                 Customize
